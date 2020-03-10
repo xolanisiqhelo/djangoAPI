@@ -1,0 +1,12 @@
+{%  extends "base/base.html" %}
+ {% block content%}
+<form method="post">
+    {% csrf_token %}
+    {{ form| linebreaks }}
+    <button href="{% url 'department-Form' %}"> submit</button>
+</form>
+
+{% endblock content%}
+
+
+

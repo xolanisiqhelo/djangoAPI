@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{ form|linebreaks }}
+<button type="submit">submit</button>
+</form>
+{%  if messages %}
+<ul class="messages">
+    {% for messages in message  %}
+    <li {% if message.tags %}class="{{ messages.tags }}"{% endif %}>
+     {{ message }}
+     {% endfor %}
+</ul>
+{% endif %}
+</body>
+</html>
